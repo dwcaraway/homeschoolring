@@ -58,3 +58,6 @@ target/
 
 #Pycharm
 .idea
+
+#Nodejs
+node_modules
