@@ -1,11 +1,9 @@
 # Bleeding edge Django
-django==1.8.2
+django==1.8.3
 
 # Configuration
 django-environ==0.3.0
 django-secure==1.0.1
-
-
 
 # Forms
 django-braces==1.8.0
@@ -32,3 +30,8 @@ django-autoslug==1.8.0
 # Time zones support
 pytz==2015.4
 
+# CMS
+-e git+https://github.com/stephenmcd/mezzanine.git@23c1375fc4b8de400a75a4a0d1ec19e941164d76#egg=Mezzanine
+
+# Shopping Cart
+-e git+https://github.com/stephenmcd/cartridge.git#egg=Cartridge

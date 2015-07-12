@@ -21,24 +21,43 @@ env = environ.Env()
 # ------------------------------------------------------------------------------
 DJANGO_APPS = (
     # Default Django apps:
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    "django.contrib.redirects",
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "django.contrib.sitemaps",
 
     # Useful template tags:
     # 'django.contrib.humanize',
-
-    # Admin
-    'django.contrib.admin',
 )
 THIRD_PARTY_APPS = (
+
+    #Mezzanine CMS
+    "mezzanine.boot",
+    "mezzanine.conf",
+    "mezzanine.core",
+    "mezzanine.generic",
+    "mezzanine.pages",
+
+    #Cartridge Addon for Mezzanine
+    "cartridge.shop",
+
+    "mezzanine.blog",
+    "mezzanine.forms",
+    "mezzanine.galleries",
+    "mezzanine.twitter",
+    # "mezzanine.accounts",
+    # "mezzanine.mobile",
+
     'crispy_forms',  # Form layouts
     'allauth',  # registration
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
+
 )
 
 # Apps specific for this project go here.
@@ -54,12 +73,35 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 # ------------------------------------------------------------------------------
 MIDDLEWARE_CLASSES = (
     # Make sure djangosecure.middleware.SecurityMiddleware is listed first
+    "mezzanine.core.middleware.UpdateCacheMiddleware",
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # Uncomment if using internationalisation or localisation
+    'django.middleware.locale.LocaleMiddleware',
+
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+
+    # Mezzanine Cartridge (e-commerce plugin)
+    "cartridge.shop.middleware.ShopMiddleware",
+
+    # Mezzanine
+    "mezzanine.core.request.CurrentRequestMiddleware",
+    "mezzanine.core.middleware.RedirectFallbackMiddleware",
+    "mezzanine.core.middleware.TemplateForDeviceMiddleware",
+    "mezzanine.core.middleware.TemplateForHostMiddleware",
+    "mezzanine.core.middleware.AdminLoginInterfaceSelectorMiddleware",
+    "mezzanine.core.middleware.SitePermissionMiddleware",
+    # Uncomment the following if using any of the SSL settings:
+    # "mezzanine.core.middleware.SSLRedirectMiddleware",
+    "mezzanine.pages.middleware.PageMiddleware",
+    "mezzanine.core.middleware.FetchFromCacheMiddleware",
+
 )
 
 # MIGRATIONS CONFIGURATION
@@ -160,6 +202,9 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
                 # Your stuff: custom template context processors go here
+
+                "mezzanine.conf.context_processors.settings",
+                "mezzanine.pages.context_processors.page",
             ],
         },
     },
@@ -207,6 +252,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
+
+    # Mezzanine
+    "mezzanine.core.auth_backends.MezzanineBackend",
 )
 
 # Some really nice defaults
@@ -257,3 +305,195 @@ LOGGING = {
 }
 
 # Your common stuff: Below this line define 3rd party library settings
+
+######################
+# CARTRIDGE SETTINGS #
+######################
+
+# The following settings are already defined in cartridge.shop.defaults
+# with default values, but are common enough to be put here, commented
+# out, for conveniently overriding. Please consult the settings
+# documentation for a full list of settings Cartridge implements:
+# http://cartridge.jupo.org/configuration.html#default-settings
+
+# Sequence of available credit card types for payment.
+# SHOP_CARD_TYPES = ("Mastercard", "Visa", "Diners", "Amex")
+
+# Setting to turn on featured images for shop categories. Defaults to False.
+# SHOP_CATEGORY_USE_FEATURED_IMAGE = True
+
+# Set an alternative OrderForm class for the checkout process.
+# SHOP_CHECKOUT_FORM_CLASS = 'cartridge.shop.forms.OrderForm'
+
+# If True, the checkout process is split into separate
+# billing/shipping and payment steps.
+# SHOP_CHECKOUT_STEPS_SPLIT = True
+
+# If True, the checkout process has a final confirmation step before
+# completion.
+# SHOP_CHECKOUT_STEPS_CONFIRMATION = True
+
+# Controls the formatting of monetary values accord to the locale
+# module in the python standard library. If an empty string is
+# used, will fall back to the system's locale.
+SHOP_CURRENCY_LOCALE = "en_US"
+
+# Dotted package path and name of the function that
+# is called on submit of the billing/shipping checkout step. This
+# is where shipping calculation can be performed and set using the
+# function ``cartridge.shop.utils.set_shipping``.
+# SHOP_HANDLER_BILLING_SHIPPING = \
+#                       "cartridge.shop.checkout.default_billship_handler"
+
+# Dotted package path and name of the function that
+# is called once an order is successful and all of the order
+# object's data has been created. This is where any custom order
+# processing should be implemented.
+# SHOP_HANDLER_ORDER = "cartridge.shop.checkout.default_order_handler"
+
+# Dotted package path and name of the function that
+# is called on submit of the payment checkout step. This is where
+# integration with a payment gateway should be implemented.
+# SHOP_HANDLER_PAYMENT = "cartridge.shop.checkout.default_payment_handler"
+
+# Sequence of value/name pairs for order statuses.
+# SHOP_ORDER_STATUS_CHOICES = (
+#     (1, "Unprocessed"),
+#     (2, "Processed"),
+# )
+
+# Sequence of value/name pairs for types of product options,
+# eg Size, Colour. NOTE: Increasing the number of these will
+# require database migrations!
+# SHOP_OPTION_TYPE_CHOICES = (
+#     (1, "Size"),
+#     (2, "Colour"),
+# )
+
+# Sequence of indexes from the SHOP_OPTION_TYPE_CHOICES setting that
+# control how the options should be ordered in the admin,
+# eg for "Colour" then "Size" given the above:
+# SHOP_OPTION_ADMIN_ORDER = (2, 1)
+
+######################
+# MEZZANINE SETTINGS #
+######################
+
+# The following settings are already defined with default values in
+# the ``defaults.py`` module within each of Mezzanine's apps, but are
+# common enough to be put here, commented out, for conveniently
+# overriding. Please consult the settings documentation for a full list
+# of settings Mezzanine implements:
+# http://mezzanine.jupo.org/docs/configuration.html#default-settings
+
+# Controls the ordering and grouping of the admin menu.
+#
+# ADMIN_MENU_ORDER = (
+#     ("Content", ("pages.Page", "blog.BlogPost",
+#        "generic.ThreadedComment", ("Media Library", "fb_browse"),)),
+#     ("Shop", ("shop.Product", "shop.ProductOption", "shop.DiscountCode",
+#         "shop.Sale", "shop.Order")),
+#     ("Site", ("sites.Site", "redirects.Redirect", "conf.Setting")),
+#     ("Users", ("auth.User", "auth.Group",)),
+# )
+
+# A three item sequence, each containing a sequence of template tags
+# used to render the admin dashboard.
+#
+# DASHBOARD_TAGS = (
+#     ("blog_tags.quick_blog", "mezzanine_tags.app_list"),
+#     ("comment_tags.recent_comments",),
+#     ("mezzanine_tags.recent_actions",),
+# )
+
+# A sequence of templates used by the ``page_menu`` template tag. Each
+# item in the sequence is a three item sequence, containing a unique ID
+# for the template, a label for the template, and the template path.
+# These templates are then available for selection when editing which
+# menus a page should appear in. Note that if a menu template is used
+# that doesn't appear in this setting, all pages will appear in it.
+
+# PAGE_MENU_TEMPLATES = (
+#     (1, "Top navigation bar", "pages/menus/dropdown.html"),
+#     (2, "Left-hand tree", "pages/menus/tree.html"),
+#     (3, "Footer", "pages/menus/footer.html"),
+# )
+
+# A sequence of fields that will be injected into Mezzanine's (or any
+# library's) models. Each item in the sequence is a four item sequence.
+# The first two items are the dotted path to the model and its field
+# name to be added, and the dotted path to the field class to use for
+# the field. The third and fourth items are a sequence of positional
+# args and a dictionary of keyword args, to use when creating the
+# field instance. When specifying the field class, the path
+# ``django.models.db.`` can be omitted for regular Django model fields.
+#
+# EXTRA_MODEL_FIELDS = (
+#     (
+#         # Dotted path to field.
+#         "mezzanine.blog.models.BlogPost.image",
+#         # Dotted path to field class.
+#         "somelib.fields.ImageField",
+#         # Positional args for field class.
+#         ("Image",),
+#         # Keyword args for field class.
+#         {"blank": True, "upload_to": "blog"},
+#     ),
+#     # Example of adding a field to *all* of Mezzanine's content types:
+#     (
+#         "mezzanine.pages.models.Page.another_field",
+#         "IntegerField", # 'django.db.models.' is implied if path is omitted.
+#         ("Another name",),
+#         {"blank": True, "default": 1},
+#     ),
+# )
+
+# Setting to turn on featured images for blog posts. Defaults to False.
+#
+# BLOG_USE_FEATURED_IMAGE = True
+
+
+#
+# MEZZANINE CMS Settings
+#
+#
+
+# List of processors used by RequestContext to populate the context.
+# Each one should be a callable that takes the request object as its
+# only parameter and returns a dictionary to add to the context.
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.contrib.messages.context_processors.messages",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.static",
+    "django.core.context_processors.media",
+    "django.core.context_processors.request",
+    "django.core.context_processors.tz",
+    "mezzanine.conf.context_processors.settings",
+    "mezzanine.pages.context_processors.page",
+)
+
+# Store these package names here as they may change in the future since
+# at the moment we are using custom forks of them.
+PACKAGE_NAME_FILEBROWSER = "filebrowser_safe"
+PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
+
+INSTALLED_APPS+= ( PACKAGE_NAME_FILEBROWSER, PACKAGE_NAME_GRAPPELLI)
+
+# The numeric mode to set newly-uploaded files to. The value should be
+# a mode you'd pass directly to os.chmod.
+FILE_UPLOAD_PERMISSIONS = 0o644
+
+# set_dynamic_settings() will rewrite globals based on what has been
+# defined so far, in order to provide some better defaults where
+# applicable. We also allow this settings module to be imported
+# without Mezzanine installed, as the case may be when using the
+# fabfile, where setting the dynamic settings below isn't strictly
+# required.
+try:
+    from mezzanine.utils.conf import set_dynamic_settings
+except ImportError:
+    pass
+else:
+    set_dynamic_settings(globals())
