@@ -70,3 +70,4 @@ node_modules
 
 media
 staticfiles
+.divshot-cache
