@@ -1,36 +1,14 @@
 {% extends "boot-classified-base.html" %}
 {% load i18n %}
 
-<!-- TODO move this into a block override from the parent -->
+{% block extra_css %}
 <!-- bxSlider CSS file -->
 <link href="assets/plugins/bxslider/jquery.bxslider.css" rel="stylesheet" />
-<!-- END TODO
+{% endblock %}
 
 <body>
 <div id="wrapper">
-  <div class="header">
-    <nav class="navbar   navbar-site navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          <a href="index.html" class="navbar-brand logo logo-title"> 
-          <!-- Original Logo will be placed here  --> 
-          <span class="logo-icon"><i class="icon icon-search-1 ln-shadow-logo shape-0"></i> </span> BOOT<span>CLASSIFIED </span> </a> </div>
-        <div class="navbar-collapse collapse">
-          
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="login.html">Login</a></li>
-            <li><a href="signup.html">Signup</a></li>
-            <li class="postadd"><a class="btn btn-block   btn-border btn-post btn-danger" href="post-ads.html">Post Free Add</a></li>
-          </ul>
-        </div>
-        <!--/.nav-collapse --> 
-      </div>
-      <!-- /.container-fluid --> 
-    </nav>
-  </div>
-  <!-- /.header -->
-  
+
   <div class="main-container">
     <div class="container">
       <ol class="breadcrumb pull-left">
@@ -174,7 +152,7 @@
         <li> &copy; 2015 BootClassified </li>
       </ul>
     </div>
-    
+
   </div>
   <!-- /.footer -->
 </div>
