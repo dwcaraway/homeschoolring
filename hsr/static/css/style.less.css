@@ -1,0 +1,26 @@
+@media {
+    (max-width: {
+        991px) {
+            .list-title a;
+        }
+        979px) {
+            .intro;
+        }
+        767px) {
+            and {
+                (min-width: {
+                    0) {
+                        .hidden-xs;
+                    }
+                }
+            }
+        }
+    }
+}
+height: {
+    auto;padding-bottom: {
+        30px; {
+            .intro .col-sm-4;
+        }
+    }
+}
