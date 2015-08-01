@@ -83,6 +83,9 @@ urlpatterns += patterns('',
     url("^signup\.html$", direct_to_template, {"template": "signup.html"}, name="signup"),
     url("^forgot-password\.html$", direct_to_template, {"template": "forgot-password.html"}, name="forgot-password"),
 
+    #TODO should post-ads be deleted?
+    url("^post-ads\.html$", direct_to_template, {"template": "post-ads.html"}, name="post-ads"),
+
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------
     # This pattern gives us a normal ``Page`` object, so that your
