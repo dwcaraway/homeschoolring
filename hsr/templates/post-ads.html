@@ -292,7 +292,7 @@
 
 {% block extra_js %}
 <!-- include jquery file upload plugin  --> 
-<script src="assets/js/fileinput.min.js" type="text/javascript"></script> 
+<script src="{% static "js/fileinput.min.js" %}" type="text/javascript"></script>
 <script>
 // initialize with defaults
 $("#input-upload-img1").fileinput();
