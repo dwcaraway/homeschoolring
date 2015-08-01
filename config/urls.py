@@ -80,6 +80,7 @@ urlpatterns += patterns('',
 
     url("^$", direct_to_template, {"template": "index.html"}, name="home"),
     url("^about-us\.html$", direct_to_template, {"template": "about-us.html"}, name="about-us"),
+    url("^signup\.html$", direct_to_template, {"template": "signup.html"}, name="signup"),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------
