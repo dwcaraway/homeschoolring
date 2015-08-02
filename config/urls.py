@@ -90,6 +90,7 @@ urlpatterns += patterns('',
     url("^ads-details\.html$", direct_to_template, {"template": "ads-details.html"}, name="ads-details"),
     url("^account-archived-ads\.html$", direct_to_template, {"template": "account-archived-ads.html"}, name="account-archived-ads"),
     url("^blank-page\.html$", direct_to_template, {"template": "blank-page.html"}, name="blank-page"),
+    url("^posting-success\.html$", direct_to_template, {"template": "posting-success.html"}, name="posting-success"),
 
     #TODO should post-ads be deleted?
     url("^post-ads\.html$", direct_to_template, {"template": "post-ads.html"}, name="post-ads"),
