@@ -82,6 +82,7 @@ urlpatterns += patterns('',
     url("^about-us\.html$", direct_to_template, {"template": "about-us.html"}, name="about-us"),
     url("^signup\.html$", direct_to_template, {"template": "signup.html"}, name="signup"),
     url("^forgot-password\.html$", direct_to_template, {"template": "forgot-password.html"}, name="forgot-password"),
+    url("^account-home\.html$", direct_to_template, {"template": "account-home.html"}, name="account-home"),
 
     #TODO should post-ads be deleted?
     url("^post-ads\.html$", direct_to_template, {"template": "post-ads.html"}, name="post-ads"),
