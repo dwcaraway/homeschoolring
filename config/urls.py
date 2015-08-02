@@ -85,6 +85,7 @@ urlpatterns += patterns('',
     url("^account-home\.html$", direct_to_template, {"template": "account-home.html"}, name="account-home"),
     url("^account-close\.html$", direct_to_template, {"template": "account-close.html"}, name="account-close"),
     url("^account-saved-search\.html$", direct_to_template, {"template": "account-saved-search.html"}, name="account-saved-search"),
+    url("^account-pending-approval-ads\.html$", direct_to_template, {"template": "account-pending-approval-ads.html"}, name="account-pending-approval-ads"),
 
     #TODO should post-ads be deleted?
     url("^post-ads\.html$", direct_to_template, {"template": "post-ads.html"}, name="post-ads"),
