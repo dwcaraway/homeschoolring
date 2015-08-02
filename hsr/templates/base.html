@@ -127,6 +127,9 @@
 
 {# Placed at the end of the document so the pages load faster #}
 {% compress js %}
+    <!-- include checkRadio plugin //Custom check & Radio  -->
+    <script type="text/javascript" src="{%  static  "js/icheck.min.js" %}"></script>
+
 
     <script type="text/javascript" src="{% static "js/jquery/1.11.3/jquery-1.11.3.min.js" %}"></script>
     <script type="text/javascript" src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
@@ -158,17 +161,21 @@
 
     <!-- include form-validation plugin || add this script where you need validation   -->
     <script type="text/javascript" src="{% static "js/form-validation.js"%}"></script>
-
-    <script>
-        paceOptions = {
-            elements: true
-        };
-    </script>
-
     <script src="{% static "js/pace.min.js" %}"></script>
-    {% block extra_js %}{% endblock %}
+
+    <script src="{% static  "js/footable.js" %}" type="text/javascript"></script>
+    <script src="{% static "js/footable.filter.js" %}" type="text/javascript"></script>
+
 
 {% endcompress %}
+
+{% block extra_js %}{% endblock %}
+
+<script>
+    paceOptions = {
+        elements: true
+    };
+</script>
 
 {% include "includes/footer_scripts.html" %}
 

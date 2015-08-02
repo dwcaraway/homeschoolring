@@ -1,77 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Fav and touch icons -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
-<link rel="shortcut icon" href="assets/ico/favicon.png">
-<title>BOOTCLASIFIED - Responsive Classified Theme</title>
-<!-- Bootstrap core CSS -->
-<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+{% extends "account-base.html" %}
 
-<!-- Custom styles for this template -->
-<link href="assets/css/style.css" rel="stylesheet">
+{% load staticfiles %}
 
-<!-- styles needed for carousel slider -->
-<link href="assets/css/owl.carousel.css" rel="stylesheet">
-<link href="assets/css/owl.theme.css" rel="stylesheet">
-
-<!-- Just for debugging purposes. -->
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-<![endif]-->
-
-<!-- include pace script for automatic web page progress bar  -->
-
-<script>
-    paceOptions = {
-      elements: true
-    };
-</script>
-<script src="assets/js/pace.min.js"></script>
-</head>
-<body>
-<div id="wrapper">
-  <div class="header">
-    <nav class="navbar   navbar-site navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          <a href="index.html" class="navbar-brand logo logo-title"> 
-          <!-- Original Logo will be placed here  --> 
-          <span class="logo-icon"><i class="icon icon-search-1 ln-shadow-logo shape-0"></i> </span> BOOT<span>CLASSIFIED </span> </a> </div>
-        <div class="navbar-collapse collapse">
-          
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Signout <i class="glyphicon glyphicon-off"></i> </a></li>
-            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span>Jhon Doe</span> <i class="icon-user fa"></i> <i class=" icon-down-open-big fa"></i></a>
-              <ul class="dropdown-menu user-menu">
-                <li class="active"><a href="account-home.html"><i class="icon-home"></i> Personal Home </a></li>
-                
-                <li><a href="account-myads.html"><i class="icon-th-thumb"></i> My ads </a></li>
-                <li><a href="account-favourite-ads.html"><i class="icon-heart"></i> Favourite ads </a></li>
-                <li><a href="account-saved-search.html"><i class="icon-star-circled"></i> Saved search </a></li>
-                <li><a href="account-archived-ads.html"><i class="icon-folder-close"></i> Archived ads </a></li>
-                <li><a href="account-pending-approval-ads.html"><i class="icon-hourglass"></i> Pending approval </a></li>
-                <li><a href="statements.html"><i class=" icon-money "></i> Payment history </a></li>
-              </ul>
-            </li>
-            <li class="postadd"><a class="btn btn-block   btn-border btn-post btn-danger" href="post-ads.html">Post Free Add</a></li>
-          </ul>
-        </div>
-        <!--/.nav-collapse --> 
-      </div>
-      <!-- /.container-fluid --> 
-    </nav>
-  </div>
-  <!-- /.header -->
-  
+{% block body_container %}
   <div class="main-container">
     <div class="container">
       <div class="row">
@@ -137,7 +68,7 @@
                 <div class="adds-wrapper">
                   <div class="item-list">
                     <div class="col-sm-2 no-padding photobox">
-                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="images/item/tp/Image00014.jpg" alt="img"></a> </div>
+                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="{% static "images/item/tp/Image00014.jpg" %}" alt="img"></a> </div>
                     </div>
                     <!--/.photobox-->
                     <div class="col-sm-8 add-desc-box">
@@ -155,7 +86,7 @@
                   
                   <div class="item-list">
                     <div class="col-sm-2 no-padding photobox">
-                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="images/item/tp/Image00014.jpg" alt="img"></a> </div>
+                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="{% static "images/item/tp/Image00014.jpg" %}" alt="img"></a> </div>
                     </div>
                     <!--/.photobox-->
                     <div class="col-sm-8 add-desc-box">
@@ -173,7 +104,7 @@
                   <!--/.item-list-->
                   <div class="item-list">
                     <div class="col-sm-2 no-padding photobox">
-                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="images/item/tp/Image00014.jpg" alt="img"></a> </div>
+                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="{% static "images/item/tp/Image00014.jpg" %}" alt="img"></a> </div>
                     </div>
                     <!--/.photobox-->
                     <div class="col-sm-8 add-desc-box">
@@ -191,7 +122,7 @@
                   <!--/.item-list-->
                   <div class="item-list">
                     <div class="col-sm-2 no-padding photobox">
-                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="images/item/tp/Image00014.jpg" alt="img"></a> </div>
+                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="{% static "images/item/tp/Image00014.jpg" %}" alt="img"></a> </div>
                     </div>
                     <!--/.photobox-->
                     <div class="col-sm-8 add-desc-box">
@@ -209,26 +140,7 @@
                   <!--/.item-list-->
                   <div class="item-list">
                     <div class="col-sm-2 no-padding photobox">
-                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="images/item/tp/Image00014.jpg" alt="img"></a> </div>
-                    </div>
-                    <!--/.photobox-->
-                    <div class="col-sm-8 add-desc-box">
-                      <div class="ads-details">
-                        <h5 class="add-title"> <a href="ads-details.html"> SAMSUNG GALAXY S CORE Duos </a> </h5>
-                        <span class="info-row"> <span class="add-type business-ads tooltipHere" data-toggle="tooltip" data-placement="right" title="Business Ads">B </span> <span class="date"><i class=" icon-clock"> </i> Today 1:21 pm </span> - <span class="category">Electronics </span>- <span class="item-location"><i class="fa fa-map-marker"></i> New York </span> </span> </div>
-                    </div>
-                    <!--/.add-desc-box-->
-                    
-                    <div class="col-sm-2 text-right text-center-xs price-box">
-                      <h4 class="item-price"> $ 230</h4>
-                    </div>
-                  </div>
-                  
-                  <!--/.item-list-->
-                  
-                  <div class="item-list">
-                    <div class="col-sm-2 no-padding photobox">
-                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="images/item/tp/Image00014.jpg" alt="img"></a> </div>
+                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="{% static "images/item/tp/Image00014.jpg" %}" alt="img"></a> </div>
                     </div>
                     <!--/.photobox-->
                     <div class="col-sm-8 add-desc-box">
@@ -247,7 +159,7 @@
                   
                   <div class="item-list">
                     <div class="col-sm-2 no-padding photobox">
-                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="images/item/tp/Image00014.jpg" alt="img"></a> </div>
+                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="{% static "images/item/tp/Image00014.jpg" %}" alt="img"></a> </div>
                     </div>
                     <!--/.photobox-->
                     <div class="col-sm-8 add-desc-box">
@@ -266,7 +178,7 @@
                   
                   <div class="item-list">
                     <div class="col-sm-2 no-padding photobox">
-                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="images/item/tp/Image00014.jpg" alt="img"></a> </div>
+                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="{% static "images/item/tp/Image00014.jpg" %}" alt="img"></a> </div>
                     </div>
                     <!--/.photobox-->
                     <div class="col-sm-8 add-desc-box">
@@ -285,7 +197,7 @@
                   
                   <div class="item-list">
                     <div class="col-sm-2 no-padding photobox">
-                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="images/item/tp/Image00014.jpg" alt="img"></a> </div>
+                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="{% static "images/item/tp/Image00014.jpg" %}" alt="img"></a> </div>
                     </div>
                     <!--/.photobox-->
                     <div class="col-sm-8 add-desc-box">
@@ -304,7 +216,26 @@
                   
                   <div class="item-list">
                     <div class="col-sm-2 no-padding photobox">
-                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="images/item/tp/Image00014.jpg" alt="img"></a> </div>
+                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="{% static "images/item/tp/Image00014.jpg" %}" alt="img"></a> </div>
+                    </div>
+                    <!--/.photobox-->
+                    <div class="col-sm-8 add-desc-box">
+                      <div class="ads-details">
+                        <h5 class="add-title"> <a href="ads-details.html"> SAMSUNG GALAXY S CORE Duos </a> </h5>
+                        <span class="info-row"> <span class="add-type business-ads tooltipHere" data-toggle="tooltip" data-placement="right" title="Business Ads">B </span> <span class="date"><i class=" icon-clock"> </i> Today 1:21 pm </span> - <span class="category">Electronics </span>- <span class="item-location"><i class="fa fa-map-marker"></i> New York </span> </span> </div>
+                    </div>
+                    <!--/.add-desc-box-->
+                    
+                    <div class="col-sm-2 text-right text-center-xs price-box">
+                      <h4 class="item-price"> $ 230</h4>
+                    </div>
+                  </div>
+                  
+                  <!--/.item-list-->
+                  
+                  <div class="item-list">
+                    <div class="col-sm-2 no-padding photobox">
+                      <div class="add-image"> <span class="photo-count"><i class="fa fa-camera"></i> 2 </span> <a href="ads-details.html"><img class="thumbnail no-margin" src="{% static "images/item/tp/Image00014.jpg" %}" alt="img"></a> </div>
                     </div>
                     <!--/.photobox-->
                     <div class="col-sm-8 add-desc-box">
@@ -336,81 +267,42 @@
     <!--/.container--> 
   </div>
   <!-- /.main-container -->
-  
-  <div class="footer" id="footer">
-    <div class="container">
-      <ul class=" pull-left navbar-link footer-nav">
-        <li><a href="index.html"> Home </a> <a href="about-us.html"> About us </a> <a href="#"> Terms and Conditions </a> <a href="#"> Privacy Policy </a> <a href="contact.html"> Contact us </a> <a href="faq.html"> FAQ </a>
-      </ul>
-      <ul class=" pull-right navbar-link footer-nav">
-        <li> &copy; 2015 BootClassified </li>
-      </ul>
-    </div>
-    
-  </div>
-  <!--/.footer--> 
-</div>
-<!-- /.wrapper --> 
+{% endblock body_container %}
 
-<!-- Le javascript
-================================================== --> 
+  <!-- include footable   -->
+    {% block extra_js %}
 
-<!-- Placed at the end of the document so the pages load faster --> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script><script src="assets/bootstrap/js/bootstrap.min.js"></script> 
+      <script type="text/javascript">
+        $(function () {
+          $('#addManageTable').footable().bind('footable_filtering', function (e) {
+            var selected = $('.filter-status').find(':selected').text();
+            if (selected && selected.length > 0) {
+              e.filter += (e.filter && e.filter.length > 0) ? ' ' + selected : selected;
+              e.clear = !e.filter;
+            }
+          });
 
-<!-- include checkRadio plugin //Custom check & Radio  --> 
-<script type="text/javascript" src="assets/js/icheck.min.js"></script> 
- 
+          $('.clear-filter').click(function (e) {
+            e.preventDefault();
+            $('.filter-status').val('');
+            $('table.demo').trigger('footable_clear_filter');
+          });
 
-<!-- include carousel slider plugin  --> 
-<script src="assets/js/owl.carousel.min.js"></script> 
+        });
+      </script>
+      <!-- include custom script for ads table [select all checkbox]  -->
+      <script>
 
-<!-- include equal height plugin  --> 
-<script src="assets/js/jquery.matchHeight-min.js"></script> 
+        function checkAll(bx) {
+          var chkinput = document.getElementsByTagName('input');
+          for (var i = 0; i < chkinput.length; i++) {
+            if (chkinput[i].type == 'checkbox') {
+              chkinput[i].checked = bx.checked;
+            }
+          }
+        }
 
-<!-- include jquery list shorting plugin plugin  --> 
-<script src="assets/js/hideMaxListItem.js"></script> 
+      </script>
 
-<!-- include footable   --> 
+    {% endblock extra_js %}
 
-<script src="assets/js/footable.js?v=2-0-1" type="text/javascript"></script> 
-<script src="assets/js/footable.filter.js?v=2-0-1" type="text/javascript"></script> 
-<script type="text/javascript">
-  $(function () {
-    $('#addManageTable').footable().bind('footable_filtering', function (e) {
-      var selected = $('.filter-status').find(':selected').text();
-      if (selected && selected.length > 0) {
-        e.filter += (e.filter && e.filter.length > 0) ? ' ' + selected : selected;
-        e.clear = !e.filter;
-      }
-    });
-
-    $('.clear-filter').click(function (e) {
-      e.preventDefault();
-      $('.filter-status').val('');
-      $('table.demo').trigger('footable_clear_filter');
-    });
-   
-  });
-</script> 
-<!-- include custom script for ads table [select all checkbox]  --> 
-<script>
-     
-function checkAll(bx) {
-  var chkinput = document.getElementsByTagName('input');
-  for(var i=0; i < chkinput.length; i++) {
-    if(chkinput[i].type == 'checkbox') {
-      chkinput[i].checked = bx.checked;
-    }
-  }
-}
-
-</script> 
-
-<!-- include jquery.fs plugin for custom scroller and selecter  --> 
-<script src="assets/plugins/jquery.fs.scroller/jquery.fs.scroller.js"></script>
-<script src="assets/plugins/jquery.fs.selecter/jquery.fs.selecter.js"></script>
-<!-- include custom script for site  --> 
-<script src="assets/js/script.js"></script>
-</body>
-</html>
