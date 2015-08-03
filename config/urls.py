@@ -91,6 +91,10 @@ urlpatterns += patterns('',
     url("^account-archived-ads\.html$", direct_to_template, {"template": "account-archived-ads.html"}, name="account-archived-ads"),
     url("^blank-page\.html$", direct_to_template, {"template": "blank-page.html"}, name="blank-page"),
     url("^posting-success\.html$", direct_to_template, {"template": "posting-success.html"}, name="posting-success"),
+    url("^category\.html$", direct_to_template, {"template": "category.html"}, name="category"),
+    url("^ajax/1\.html$", direct_to_template, {"template": "ajax/1.html"}, name="ajax1"),
+    url("^ajax/2\.html$", direct_to_template, {"template": "ajax/2.html"}, name="ajax2"),
+    url("^ajax/3\.html$", direct_to_template, {"template": "ajax/3.html"}, name="ajax3"),
 
     #TODO should post-ads be deleted?
     url("^post-ads\.html$", direct_to_template, {"template": "post-ads.html"}, name="post-ads"),

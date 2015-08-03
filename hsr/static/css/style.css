@@ -1041,7 +1041,6 @@ button.btn-search {
 /* CATEGORY INTRO
 /* =============================================================== */
 .search-row-wrapper {
-  background: url(../../images/bg.jpg);
   height: auto;
   padding: 50px 0;
   transition: all 400ms cubic-bezier(0.25, 0.1, 0.25, 1) 0s;

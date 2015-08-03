@@ -83,7 +83,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     # Uncomment if using internationalisation or localisation
-    'django.middleware.locale.LocaleMiddleware',
+    # 'django.middleware.locale.LocaleMiddleware',
 
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
 
