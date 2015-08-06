@@ -95,6 +95,7 @@ urlpatterns += patterns('',
     url("^ajax/1\.html$", direct_to_template, {"template": "ajax/1.html"}, name="ajax1"),
     url("^ajax/2\.html$", direct_to_template, {"template": "ajax/2.html"}, name="ajax2"),
     url("^ajax/3\.html$", direct_to_template, {"template": "ajax/3.html"}, name="ajax3"),
+    url("^sub-category-sub-location\.html$", direct_to_template, {"template": "sub-category-sub-location.html"}, name="sub-category"),
 
     #TODO should post-ads be deleted?
     url("^post-ads\.html$", direct_to_template, {"template": "post-ads.html"}, name="post-ads"),
