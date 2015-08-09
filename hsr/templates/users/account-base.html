@@ -8,14 +8,13 @@
       <div class="container">
         <div class="navbar-header">
           <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          <a href="index.html" class="navbar-brand logo logo-title"> 
+          <a href="{% url "home" %}" class="navbar-brand logo logo-title">
           <!-- Original Logo will be placed here  --> 
           <span class="logo-icon"><i class="icon icon-search-1 ln-shadow-logo shape-0"></i> </span> HOME<span>ED</span>SUPPLY</a> </div>
         <div class="navbar-collapse collapse">
           
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Signout <i class="glyphicon glyphicon-off"></i> </a></li>
-            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span>John Doe</span> <i class="icon-user fa"></i> <i class=" icon-down-open-big fa"></i></a>
+            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span>{{ object.username }}</span> <i class="icon-user fa"></i> <i class=" icon-down-open-big fa"></i></a>
               <ul class="dropdown-menu user-menu">
                 <li class="active"><a href="account-home.html"><i class="icon-home"></i> Personal Home </a></li>
                 
@@ -25,9 +24,9 @@
                 <li><a href="account-archived-ads.html"><i class="icon-folder-close"></i> Archived ads </a></li>
                 <li><a href="account-pending-approval-ads.html"><i class="icon-hourglass"></i> Pending approval </a></li>
                 <li><a href="statements.html"><i class=" icon-money "></i> Payment history </a></li>
+                <li><a href="{% url "account_logout" %}">Signout <i class="glyphicon glyphicon-off"></i> </a></li>
               </ul>
             </li>
-            <li class="postadd"><a class="btn btn-block   btn-border btn-post btn-danger" href="post-ads.html">Post Free Add</a></li>
           </ul>
         </div>
         <!--/.nav-collapse --> 
