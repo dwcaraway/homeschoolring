@@ -61,7 +61,7 @@
 
     <!--[if lt IE 9]>
 <script src="{% static "js/html5shiv.js" %}"></script>
-<script src="{% static "js/respond.min.js" %}"></script>
+<script src="{% static "hes/js/respond.min.js" %}"></script>
 <![endif]-->
 
     {% block extra_head %}{% endblock %}
@@ -85,7 +85,13 @@
                         Home<span>Ed</span>Supply </a></div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{% url "account_login" %}">Login</a></li>
+                    <li>
+                        {% if request.user.is_authenticated %}
+                            <a href="{% url "account_logout" %}">{% trans "Logout" %}</a>
+                        {% else %}
+                        <a href="{% url "account_login" %}">{% trans "Login" %}</a>
+                        {% endif %}
+                    </li>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
@@ -103,8 +109,8 @@
     <div class="footer" id="footer">
         <div class="container">
             <ul class=" pull-left navbar-link footer-nav">
-                <li><a href="/"> Home </a> <a href="about-us.html"> About us </a> <a href="#"> Terms and
-                    Conditions </a> <a href="#"> Privacy Policy </a> <a href="contact.html"> Contact us </a> <a
+                <li><a href="/"> Home </a> <a href="about-us.html"> About us </a> <a href="{% url "hes:coming-soon" %}"> Terms and
+                    Conditions </a> <a href="{% url "hes:coming-soon" %}"> Privacy Policy </a> <a href="{% url "hes:contact" %}"> Contact us </a> <a
                         href="faq.html"> FAQ </a>
             </ul>
             <ul class=" pull-right navbar-link footer-nav">

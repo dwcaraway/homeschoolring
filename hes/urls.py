@@ -1,7 +1,7 @@
 __author__ = 'dave'
 from django.conf.urls import url, include
 from mezzanine.core.views import direct_to_template
-from .views import ajax
+from .views import ajax, coming_soon
 
 urlpatterns = [
 
@@ -20,6 +20,8 @@ urlpatterns = [
     url("^category\.html$", direct_to_template, {"template": "hes/category.html"}, name="category"),
     url("^ajax/(?P<ajax_code>[1-3])\.html$", ajax, name="ajax"),
     url("^sub-category-sub-location\.html$", direct_to_template, {"template": "hes/sub-category-sub-location.html"}, name="sub-category"),
+    url("^coming-soon$", coming_soon, name="coming-soon"),
+    url("^contact$", direct_to_template, {"template": "hes/contact.html"}, name="contact"),
 
     #User management
     url(r'^users/', include("hes.users.urls", namespace="hes_users")),
