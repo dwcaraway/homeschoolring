@@ -24,5 +24,5 @@ urlpatterns = [
     url("^contact$", direct_to_template, {"template": "hes/contact.html"}, name="contact"),
 
     #User management
-    url(r'^users/', include("hes.users.urls", namespace="hes_users")),
+    url(r'^users/', include("hes.users.urls", namespace="users")),
 ]
