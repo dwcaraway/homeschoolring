@@ -103,12 +103,12 @@ INSTALLED_APPS = ('collectfast', ) + INSTALLED_APPS
 # EMAIL
 # ------------------------------------------------------------------------------
 DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL',
-                         default='hsr <noreply@homeschoolring.com>')
+                         default='hes <noreply@homeschoolring.com>')
 EMAIL_HOST = env("DJANGO_EMAIL_HOST", default='smtp.sendgrid.com')
 EMAIL_HOST_PASSWORD = env("SENDGRID_PASSWORD")
 EMAIL_HOST_USER = env('SENDGRID_USERNAME')
 EMAIL_PORT = env.int("EMAIL_PORT", default=587)
-EMAIL_SUBJECT_PREFIX = env("EMAIL_SUBJECT_PREFIX", default='[hsr] ')
+EMAIL_SUBJECT_PREFIX = env("EMAIL_SUBJECT_PREFIX", default='[hes] ')
 EMAIL_USE_TLS = True
 SERVER_EMAIL = EMAIL_HOST_USER
 

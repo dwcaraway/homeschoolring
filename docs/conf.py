@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# hsr documentation build configuration file, created by
+# hes documentation build configuration file, created by
 # sphinx-quickstart.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -41,7 +41,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'hsr'
+project = u'hes'
 copyright = u"2015, Dave Caraway"
 
 # The version info for the project you're documenting, acts as replacement for
@@ -185,8 +185,8 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
     ('index',
-     'hsr.tex',
-     u'hsr Documentation',
+     'hes.tex',
+     u'hes Documentation',
      u"Dave Caraway", 'manual'),
 ]
 
@@ -216,7 +216,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'hsr', u'hsr Documentation',
+    ('index', 'hes', u'hes Documentation',
      [u"Dave Caraway"], 1)
 ]
 
@@ -230,8 +230,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    ('index', 'hsr', u'hsr Documentation',
-     u"Dave Caraway", 'hsr',
+    ('index', 'hes', u'hes Documentation',
+     u"Dave Caraway", 'hes',
      'The Homeschool Ring main website for trading, buying and selling stuff.', 'Miscellaneous'),
 ]
 

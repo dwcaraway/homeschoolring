@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Django settings for hsr project.
+Django settings for hes project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/dev/topics/settings/
@@ -13,7 +13,7 @@ from __future__ import absolute_import, unicode_literals
 import environ
 
 ROOT_DIR = environ.Path(__file__) - 3  # (/a/b/myfile.py - 3 = /)
-APPS_DIR = ROOT_DIR.path('hsr')
+APPS_DIR = ROOT_DIR.path('hes')
 
 env = environ.Env()
 
@@ -64,7 +64,7 @@ THIRD_PARTY_APPS = (
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
-    'hsr.users',  # custom users app
+    'hes.users',  # custom users app
     # Your stuff: custom apps go here
 )
 
@@ -109,7 +109,7 @@ MIDDLEWARE_CLASSES = (
 # MIGRATIONS CONFIGURATION
 # ------------------------------------------------------------------------------
 MIGRATION_MODULES = {
-    'sites': 'hsr.contrib.sites.migrations'
+    'sites': 'hes.contrib.sites.migrations'
 }
 
 # DEBUG
@@ -132,7 +132,7 @@ EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.s
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
 ADMINS = (
-    ("""Dave Caraway""", 'dave@fogmine.com'),
+    ("""Dave Caraway""", 'dave@homeedsupply.com'),
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
@@ -143,7 +143,7 @@ MANAGERS = ADMINS
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    'default': env.db("DATABASE_URL", default="postgres://hsr:hsr@localhost/hsrdb"),
+    'default': env.db("DATABASE_URL", default="postgres://hesuser:hes@localhost/hesdb"),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
@@ -380,6 +380,7 @@ SHOP_CURRENCY_LOCALE = "en_US.UTF-8"
 ######################
 # MEZZANINE SETTINGS #
 ######################
+ALLOWED_HOSTS = ['www.homeedsupply.com']
 
 # The following settings are already defined with default values in
 # the ``defaults.py`` module within each of Mezzanine's apps, but are
