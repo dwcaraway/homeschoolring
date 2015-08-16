@@ -6,7 +6,7 @@ from .views import ajax, coming_soon
 urlpatterns = [
 
     url("^about-us\.html$", direct_to_template, {"template": "hes/about-us.html"}, name="about-us"),
-    url("^signup\.html$", direct_to_template, {"template": "hes/signup.html"}, name="signup"),
+    url("^signup\.html$", direct_to_template, {"template": "hes/old_signup.html"}, name="signup"),
     url("^forgot-password\.html$", direct_to_template, {"template": "hes/forgot-password.html"}, name="forgot-password"),
     url("^account-home\.html$", direct_to_template, {"template": "users/account-home.html"}, name="account-home"),
     url("^account-close\.html$", direct_to_template, {"template": "users/account-close.html"}, name="account-close"),
