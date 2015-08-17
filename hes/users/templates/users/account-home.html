@@ -1,6 +1,9 @@
-{% extends "users/account-base.html" %}
+{% extends "hes/base.html" %}
 
 {% load staticfiles %}
+{% load i18n %}
+
+{% block meta_title %}{% trans "Account" %}{% endblock meta_title %}
 
 {% block body_container %}
   <div class="main-container">
@@ -11,11 +14,10 @@
             <div class="inner-box">
               <div class="user-panel-sidebar">
                 <div class="collapse-box">
-                  <h5 class="collapse-title no-border"> My Classified <a href="#MyClassified" data-toggle="collapse" class="pull-right"><i class="fa fa-angle-down"></i></a></h5>
+                  <h5 class="collapse-title no-border"> My Account <a href="#MyClassified" data-toggle="collapse" class="pull-right"><i class="fa fa-angle-down"></i></a></h5>
                   <div class="panel-collapse collapse in" id="MyClassified">
                     <ul class="acc-list">
-                      <li><a class="active" href="account-home.html"><i class="icon-home"></i> Personal Home </a></li>
-
+                      <li><a class="active" href="{% url "hes:account-home" %}"><i class="icon-home"></i> Personal Home </a></li>
                     </ul>
                   </div>
                 </div>
@@ -24,7 +26,6 @@
                   <h5 class="collapse-title"> My Ads <a href="#MyAds" data-toggle="collapse" class="pull-right"><i class="fa fa-angle-down"></i></a></h5>
                   <div class="panel-collapse collapse in" id="MyAds">
                     <ul class="acc-list">
-                      <li><a href="account-myads.html"><i class="icon-docs"></i> My ads <span class="badge">42</span> </a></li>
                       <li><a href="account-favourite-ads.html"><i class="icon-heart"></i> Favourite ads <span class="badge">42</span> </a></li>
                       <li><a href="account-saved-search.html"><i class="icon-star-circled"></i> Saved search <span class="badge">42</span> </a></li>
                       <li><a href="account-archived-ads.html"><i class="icon-folder-close"></i> Archived ads <span class="badge">42</span></a></li>

@@ -6,12 +6,12 @@
   <div class="main-container">
     <div class="container">
       <ol class="breadcrumb pull-left">
-        <li><a href="#"><i class="icon-home fa"></i></a></li>
-        <li><a href="category.html">All Ads</a></li>
-        <li><a href="sub-category-sub-location.html">Electronics</a></li>
+        <li><a href="/"><i class="icon-home fa"></i></a></li>
+        <li><a href="{% url "hes:category" %}">All Ads</a></li>
+        <li><a href="{% url "hes:sub-category" %}">Electronics</a></li>
         <li class="active">Mobile Phones</li>
       </ol>
-      <div class="pull-right backtolist"><a href="sub-category-sub-location.html"> <i class="fa fa-angle-double-left"></i> Back to Results</a></div>
+      <div class="pull-right backtolist"><a href="{% url "hes:sub-category" %}"> <i class="fa fa-angle-double-left"></i> Back to Results</a></div>
     </div>
     <div class="container">
       <div class="row">

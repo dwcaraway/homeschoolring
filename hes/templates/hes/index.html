@@ -1,6 +1,7 @@
 {% extends "hes/base.html" %}
 
 {% load staticfiles %}
+{% load i18n %}
 
 {% block body_container %}
 
@@ -8,10 +9,9 @@
         <div class="dtable hw100">
             <div class="dtable-cell hw100">
                 <div class="container text-center">
-                    <h1 class="intro-title animated fadeInDown"> Find Classified Ads </h1>
+                    <h1 class="intro-title animated fadeInDown">{% trans "Search Education Supplies" %}</h1>
 
-                    <p class="sub animateme fittext3 animated fadeIn"> Find local classified ads on bootclassified in
-                        Minutes </p>
+                    <p class="sub animateme fittext3 animated fadeIn">{% trans "Find exactly what you need" %} </p>
 
                     <div class="row search-row animated fadeInUp">
                         <div class="col-lg-4 col-sm-4 search-col relative locationicon">
@@ -47,7 +47,7 @@
                         <div class="row">
                             <div class="col-md-4 col-sm-4 ">
                                 <div class="cat-list">
-                                    <h3 class="cat-title"><a href="category.html"><i class="fa fa-car ln-shadow"></i>
+                                    <h3 class="cat-title"><a href="{% url "hes:category" %}"><i class="fa fa-car ln-shadow"></i>
                                         Automobiles <span class="count">277,959</span> </a>
 
                                         <span data-target=".cat-id-1" data-toggle="collapse"
@@ -55,16 +55,16 @@
                                                 class=" icon-down-open-big"></span> </span>
                                     </h3>
                                     <ul class="cat-collapse collapse in cat-id-1">
-                                        <li><a href="category.html">Car Parts &amp; Accessories</a></li>
-                                        <li><a href="category.html">Campervans &amp; Caravans</a></li>
-                                        <li><a href="category.html">Motorbikes &amp; Scooters</a></li>
-                                        <li><a href="category.html">Motorbike Parts &amp; Accessories</a></li>
-                                        <li><a href="category.html">Vans, Trucks &amp; Plant</a></li>
-                                        <li><a href="category.html">Wanted</a></li>
+                                        <li><a href="{% url "hes:category" %}">Car Parts &amp; Accessories</a></li>
+                                        <li><a href="{% url "hes:category" %}">Campervans &amp; Caravans</a></li>
+                                        <li><a href="{% url "hes:category" %}">Motorbikes &amp; Scooters</a></li>
+                                        <li><a href="{% url "hes:category" %}">Motorbike Parts &amp; Accessories</a></li>
+                                        <li><a href="{% url "hes:category" %}">Vans, Trucks &amp; Plant</a></li>
+                                        <li><a href="{% url "hes:category" %}">Wanted</a></li>
                                     </ul>
                                 </div>
                                 <div class="cat-list">
-                                    <h3 class="cat-title"><a href="category.html"><i class="icon-home ln-shadow"></i>
+                                    <h3 class="cat-title"><a href="{% url "hes:category" %}"><i class="icon-home ln-shadow"></i>
                                         Property <span class="count">228,705</span></a> <span data-target=".cat-id-2"
                                                                                               data-toggle="collapse"
                                                                                               class="btn-cat-collapsed collapsed">   <span
@@ -72,18 +72,18 @@
 
 
                                     <ul class="cat-collapse collapse in cat-id-2">
-                                        <li><a href="category.html">House for Rent</a></li>
-                                        <li><a href="category.html">House for Sale </a></li>
-                                        <li><a href="category.html"> Apartments For Sale </a></li>
-                                        <li><a href="category.html">Apartments for Rent </a></li>
-                                        <li><a href="category.html">Farms-Ranches </a></li>
-                                        <li><a href="category.html">Land </a></li>
-                                        <li><a href="category.html">Vacation Rentals </a></li>
-                                        <li><a href="category.html">Commercial Building</a></li>
+                                        <li><a href="{% url "hes:category" %}">House for Rent</a></li>
+                                        <li><a href="{% url "hes:category" %}">House for Sale </a></li>
+                                        <li><a href="{% url "hes:category" %}"> Apartments For Sale </a></li>
+                                        <li><a href="{% url "hes:category" %}">Apartments for Rent </a></li>
+                                        <li><a href="{% url "hes:category" %}">Farms-Ranches </a></li>
+                                        <li><a href="{% url "hes:category" %}">Land </a></li>
+                                        <li><a href="{% url "hes:category" %}">Vacation Rentals </a></li>
+                                        <li><a href="{% url "hes:category" %}">Commercial Building</a></li>
                                     </ul>
                                 </div>
                                 <div class="cat-list">
-                                    <h3 class="cat-title"><a href="category.html"><i class="icon-home ln-shadow"></i>
+                                    <h3 class="cat-title"><a href="{% url "hes:category" %}"><i class="icon-home ln-shadow"></i>
                                         Jobs <span class="count">6375</span></a>
 
                                         <span data-target=".cat-id-3" data-toggle="collapse"
@@ -91,18 +91,18 @@
                                                 class=" icon-down-open-big"></span> </span>
                                     </h3>
                                     <ul class="cat-collapse collapse in cat-id-3">
-                                        <li><a href="category.html">Full Time Jobs</a></li>
-                                        <li><a href="category.html">Internet Jobs </a></li>
-                                        <li><a href="category.html">Learn &amp; Earn jobs </a></li>
-                                        <li><a href="category.html"> Manual Labor Jobs </a></li>
-                                        <li><a href="category.html">Other Jobs </a></li>
-                                        <li><a href="category.html">OwnBusiness </a></li>
+                                        <li><a href="{% url "hes:category" %}">Full Time Jobs</a></li>
+                                        <li><a href="{% url "hes:category" %}">Internet Jobs </a></li>
+                                        <li><a href="{% url "hes:category" %}">Learn &amp; Earn jobs </a></li>
+                                        <li><a href="{% url "hes:category" %}"> Manual Labor Jobs </a></li>
+                                        <li><a href="{% url "hes:category" %}">Other Jobs </a></li>
+                                        <li><a href="{% url "hes:category" %}">OwnBusiness </a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <div class="cat-list">
-                                    <h3 class="cat-title"><a href="category.html"><i
+                                    <h3 class="cat-title"><a href="{% url "hes:category" %}"><i
                                             class="fa fa-briefcase ln-shadow"></i> Services <span
                                             class="count">45,526</span></a>
                                         <span data-target=".cat-id-4" data-toggle="collapse"
@@ -110,19 +110,19 @@
                                                 class=" icon-down-open-big"></span> </span>
                                     </h3>
                                     <ul class="cat-collapse collapse in cat-id-4">
-                                        <li><a href="category.html">Building, Home &amp; Removals</a></li>
-                                        <li><a href="category.html">Entertainment</a></li>
-                                        <li><a href="category.html">Health &amp; Beauty</a></li>
-                                        <li><a href="category.html">Miscellaneous</a></li>
-                                        <li><a href="category.html">Property &amp; Shipping</a></li>
-                                        <li><a href="category.html">Tax, Money &amp; Visas</a></li>
-                                        <li><a href="category.html">Telecoms &amp; Computers</a></li>
-                                        <li><a href="category.html">Travel Services &amp; Tours</a></li>
-                                        <li><a href="category.html">Tuition &amp; Lessons</a></li>
+                                        <li><a href="{% url "hes:category" %}">Building, Home &amp; Removals</a></li>
+                                        <li><a href="{% url "hes:category" %}">Entertainment</a></li>
+                                        <li><a href="{% url "hes:category" %}">Health &amp; Beauty</a></li>
+                                        <li><a href="{% url "hes:category" %}">Miscellaneous</a></li>
+                                        <li><a href="{% url "hes:category" %}">Property &amp; Shipping</a></li>
+                                        <li><a href="{% url "hes:category" %}">Tax, Money &amp; Visas</a></li>
+                                        <li><a href="{% url "hes:category" %}">Telecoms &amp; Computers</a></li>
+                                        <li><a href="{% url "hes:category" %}">Travel Services &amp; Tours</a></li>
+                                        <li><a href="{% url "hes:category" %}">Tuition &amp; Lessons</a></li>
                                     </ul>
                                 </div>
                                 <div class="cat-list">
-                                    <h3 class="cat-title"><a href="category.html"><i
+                                    <h3 class="cat-title"><a href="{% url "hes:category" %}"><i
                                             class="icon-book-open ln-shadow"></i> Learning <span
                                             class="count">26,529</span></a> <span data-target=".cat-id-5"
                                                                                   data-toggle="collapse"
@@ -130,34 +130,34 @@
                                             class=" icon-down-open-big"></span> </span>
                                     </h3>
                                     <ul class="cat-collapse collapse in cat-id-5">
-                                        <li><a href="category.html"> Automotive Classes </a></li>
-                                        <li><a href="category.html"> Computer Multimedia Classes </a></li>
-                                        <li><a href="category.html"> Sports Classes </a></li>
-                                        <li><a href="category.html"> Home Improvement Classes </a></li>
-                                        <li><a href="category.html"> Language Classes </a></li>
-                                        <li><a href="category.html"> Music Classes </a></li>
-                                        <li><a href="category.html"> Personal Fitness </a></li>
-                                        <li><a href="category.html"> Other Classes </a></li>
+                                        <li><a href="{% url "hes:category" %}"> Automotive Classes </a></li>
+                                        <li><a href="{% url "hes:category" %}"> Computer Multimedia Classes </a></li>
+                                        <li><a href="{% url "hes:category" %}"> Sports Classes </a></li>
+                                        <li><a href="{% url "hes:category" %}"> Home Improvement Classes </a></li>
+                                        <li><a href="{% url "hes:category" %}"> Language Classes </a></li>
+                                        <li><a href="{% url "hes:category" %}"> Music Classes </a></li>
+                                        <li><a href="{% url "hes:category" %}"> Personal Fitness </a></li>
+                                        <li><a href="{% url "hes:category" %}"> Other Classes </a></li>
                                     </ul>
                                 </div>
                                 <div class="cat-list">
-                                    <h3 class="cat-title"><a href="category.html"><i
+                                    <h3 class="cat-title"><a href="{% url "hes:category" %}"><i
                                             class="icon-guidedog ln-shadow"></i> Pets <span class="count">42,111</span></a>
                                         <span data-target=".cat-id-6" data-toggle="collapse"
                                               class="btn-cat-collapsed collapsed">   <span
                                                 class=" icon-down-open-big"></span> </span>
                                     </h3>
                                     <ul class="cat-collapse collapse in cat-id-6">
-                                        <li><a href="category.html">Pets for Sale</a></li>
-                                        <li><a href="category.html">Petsitters &amp; Dogwalkers</a></li>
-                                        <li><a href="category.html">Equipment &amp; Accessories</a></li>
-                                        <li><a href="category.html">Missing, Lost &amp; Found</a></li>
+                                        <li><a href="{% url "hes:category" %}">Pets for Sale</a></li>
+                                        <li><a href="{% url "hes:category" %}">Petsitters &amp; Dogwalkers</a></li>
+                                        <li><a href="{% url "hes:category" %}">Equipment &amp; Accessories</a></li>
+                                        <li><a href="{% url "hes:category" %}">Missing, Lost &amp; Found</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-4   last-column">
                                 <div class="cat-list">
-                                    <h3 class="cat-title"><a href="category.html"><i
+                                    <h3 class="cat-title"><a href="{% url "hes:category" %}"><i
                                             class=" icon-basket-1 ln-shadow"></i> For Sale <span
                                             class="count">64,526</span></a> <span data-target=".cat-id-7"
                                                                                   data-toggle="collapse"
@@ -165,27 +165,27 @@
                                             class=" icon-down-open-big"></span> </span>
                                     </h3>
                                     <ul class="cat-collapse collapse in cat-id-7">
-                                        <li><a href="category.html">Audio &amp; Stereo</a></li>
-                                        <li><a href="category.html">Baby &amp; Kids Stuff</a></li>
-                                        <li><a href="category.html">CDs, DVDs, Games &amp; Books</a></li>
-                                        <li><a href="category.html">Clothes, Footwear &amp; Accessories</a></li>
-                                        <li><a href="category.html">Computers &amp; Software</a></li>
-                                        <li><a href="category.html">Home &amp; Garden</a></li>
-                                        <li><a href="category.html">Music &amp; Instruments</a></li>
-                                        <li><a href="category.html">Office Furniture &amp; Equipment</a></li>
-                                        <li><a href="category.html">Phones, Mobile Phones &amp; Telecoms</a></li>
-                                        <li><a href="category.html">Sports, Leisure &amp; Travel</a></li>
-                                        <li><a href="category.html">Tickets</a></li>
-                                        <li><a href="category.html">TV, DVD &amp; Cameras</a></li>
-                                        <li><a href="category.html">Video Games &amp; Consoles</a></li>
-                                        <li><a href="category.html">Freebies</a></li>
-                                        <li><a href="category.html">Miscellaneous Goods</a></li>
-                                        <li><a href="category.html">Stuff Wanted</a></li>
-                                        <li><a href="category.html">Swap Shop</a></li>
+                                        <li><a href="{% url "hes:category" %}">Audio &amp; Stereo</a></li>
+                                        <li><a href="{% url "hes:category" %}">Baby &amp; Kids Stuff</a></li>
+                                        <li><a href="{% url "hes:category" %}">CDs, DVDs, Games &amp; Books</a></li>
+                                        <li><a href="{% url "hes:category" %}">Clothes, Footwear &amp; Accessories</a></li>
+                                        <li><a href="{% url "hes:category" %}">Computers &amp; Software</a></li>
+                                        <li><a href="{% url "hes:category" %}">Home &amp; Garden</a></li>
+                                        <li><a href="{% url "hes:category" %}">Music &amp; Instruments</a></li>
+                                        <li><a href="{% url "hes:category" %}">Office Furniture &amp; Equipment</a></li>
+                                        <li><a href="{% url "hes:category" %}">Phones, Mobile Phones &amp; Telecoms</a></li>
+                                        <li><a href="{% url "hes:category" %}">Sports, Leisure &amp; Travel</a></li>
+                                        <li><a href="{% url "hes:category" %}">Tickets</a></li>
+                                        <li><a href="{% url "hes:category" %}">TV, DVD &amp; Cameras</a></li>
+                                        <li><a href="{% url "hes:category" %}">Video Games &amp; Consoles</a></li>
+                                        <li><a href="{% url "hes:category" %}">Freebies</a></li>
+                                        <li><a href="{% url "hes:category" %}">Miscellaneous Goods</a></li>
+                                        <li><a href="{% url "hes:category" %}">Stuff Wanted</a></li>
+                                        <li><a href="{% url "hes:category" %}">Swap Shop</a></li>
                                     </ul>
                                 </div>
                                 <div class="cat-list ">
-                                    <h3 class="cat-title"><a href="category.html"><i
+                                    <h3 class="cat-title"><a href="{% url "hes:category" %}"><i
                                             class=" icon-theatre ln-shadow"></i> Community <span
                                             class="count">5,30</span> </a> <span data-target=".cat-id-8"
                                                                                  data-toggle="collapse"
@@ -193,11 +193,11 @@
                                             class=" icon-down-open-big"></span> </span>
                                     </h3>
                                     <ul class="cat-collapse collapse in cat-id-8">
-                                        <li><a href="category.html">Announcements </a></li>
-                                        <li><a href="category.html">Car Pool - Bike Ride </a></li>
-                                        <li><a href="category.html">Charity - Donate - NGO </a></li>
-                                        <li><a href="category.html">Lost - Found </a></li>
-                                        <li><a href="category.html">Tender Notices </a></li>
+                                        <li><a href="{% url "hes:category" %}">Announcements </a></li>
+                                        <li><a href="{% url "hes:category" %}">Car Pool - Bike Ride </a></li>
+                                        <li><a href="{% url "hes:category" %}">Charity - Donate - NGO </a></li>
+                                        <li><a href="{% url "hes:category" %}">Lost - Found </a></li>
+                                        <li><a href="{% url "hes:category" %}">Tender Notices </a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -280,25 +280,25 @@
 
                                     <div class="row">
                                         <ul class="cat-list col-xs-6">
-                                            <li><a href="category.html">Atlanta</a></li>
-                                            <li><a href="category.html">Wichita </a></li>
-                                            <li><a href="category.html"> Anchorage </a></li>
-                                            <li><a href="category.html"> Dallas </a></li>
-                                            <li><a href="category.html"> New York </a></li>
-                                            <li><a href="category.html">Santa Ana/Anaheim </a></li>
-                                            <li><a href="category.html"> Miami </a></li>
-                                            <li><a href="category.html">Los Angeles</a></li>
+                                            <li><a href="{% url "hes:category" %}">Atlanta</a></li>
+                                            <li><a href="{% url "hes:category" %}">Wichita </a></li>
+                                            <li><a href="{% url "hes:category" %}"> Anchorage </a></li>
+                                            <li><a href="{% url "hes:category" %}"> Dallas </a></li>
+                                            <li><a href="{% url "hes:category" %}"> New York </a></li>
+                                            <li><a href="{% url "hes:category" %}">Santa Ana/Anaheim </a></li>
+                                            <li><a href="{% url "hes:category" %}"> Miami </a></li>
+                                            <li><a href="{% url "hes:category" %}">Los Angeles</a></li>
                                         </ul>
 
                                         <ul class="cat-list cat-list-border col-xs-6">
-                                            <li><a href="category.html">Virginia Beach </a></li>
-                                            <li><a href="category.html"> San Diego </a></li>
-                                            <li><a href="category.html">Boston </a></li>
-                                            <li><a href="category.html">Houston</a></li>
-                                            <li><a href="category.html">Salt Lake City </a></li>
-                                            <li><a href="category.html">San Francisco </a></li>
-                                            <li><a href="category.html">Tampa </a></li>
-                                            <li><a href="category.html"> Washington DC </a></li>
+                                            <li><a href="{% url "hes:category" %}">Virginia Beach </a></li>
+                                            <li><a href="{% url "hes:category" %}"> San Diego </a></li>
+                                            <li><a href="{% url "hes:category" %}">Boston </a></li>
+                                            <li><a href="{% url "hes:category" %}">Houston</a></li>
+                                            <li><a href="{% url "hes:category" %}">Salt Lake City </a></li>
+                                            <li><a href="{% url "hes:category" %}">San Francisco </a></li>
+                                            <li><a href="{% url "hes:category" %}">Tampa </a></li>
+                                            <li><a href="{% url "hes:category" %}"> Washington DC </a></li>
 
                                         </ul>
                                     </div>
@@ -310,34 +310,34 @@
 
                                 <div class="row">
                                     <ul class="cat-list col-md-4 col-xs-4 col-xxs-6">
-                                        <li><a href="category.html">free </a></li>
-                                        <li><a href="category.html">furniture </a></li>
-                                        <li><a href="category.html">general </a></li>
-                                        <li><a href="category.html">household </a></li>
-                                        <li><a href="category.html">jewelry </a></li>
-                                        <li><a href="category.html">materials </a></li>
-                                        <li><a href="category.html">sporting </a></li>
-                                        <li><a href="category.html">tickets </a></li>
+                                        <li><a href="{% url "hes:category" %}">free </a></li>
+                                        <li><a href="{% url "hes:category" %}">furniture </a></li>
+                                        <li><a href="{% url "hes:category" %}">general </a></li>
+                                        <li><a href="{% url "hes:category" %}">household </a></li>
+                                        <li><a href="{% url "hes:category" %}">jewelry </a></li>
+                                        <li><a href="{% url "hes:category" %}">materials </a></li>
+                                        <li><a href="{% url "hes:category" %}">sporting </a></li>
+                                        <li><a href="{% url "hes:category" %}">tickets </a></li>
                                     </ul>
                                     <ul class="cat-list col-md-4 col-xs-4 col-xxs-6">
-                                        <li><a href="category.html">tools </a></li>
-                                        <li><a href="category.html">wanted </a></li>
-                                        <li><a href="category.html">cell phones </a></li>
-                                        <li><a href="category.html">clothes+acc </a></li>
-                                        <li><a href="category.html">collectibles </a></li>
-                                        <li><a href="category.html">electronics </a></li>
-                                        <li><a href="category.html">farm+garden </a></li>
-                                        <li><a href="category.html">garage sale </a></li>
+                                        <li><a href="{% url "hes:category" %}">tools </a></li>
+                                        <li><a href="{% url "hes:category" %}">wanted </a></li>
+                                        <li><a href="{% url "hes:category" %}">cell phones </a></li>
+                                        <li><a href="{% url "hes:category" %}">clothes+acc </a></li>
+                                        <li><a href="{% url "hes:category" %}">collectibles </a></li>
+                                        <li><a href="{% url "hes:category" %}">electronics </a></li>
+                                        <li><a href="{% url "hes:category" %}">farm+garden </a></li>
+                                        <li><a href="{% url "hes:category" %}">garage sale </a></li>
                                     </ul>
                                     <ul class="cat-list col-md-4 col-xs-4 col-xxs-6">
-                                        <li><a href="category.html">heavy equip </a></li>
-                                        <li><a href="category.html">motorcycles </a></li>
-                                        <li><a href="category.html">music instr </a></li>
-                                        <li><a href="category.html">photo+video </a></li>
-                                        <li><a href="category.html">appliances </a></li>
-                                        <li><a href="category.html">Land </a></li>
-                                        <li><a href="category.html">arts+crafts </a></li>
-                                        <li><a href="category.html">auto parts </a></li>
+                                        <li><a href="{% url "hes:category" %}">heavy equip </a></li>
+                                        <li><a href="{% url "hes:category" %}">motorcycles </a></li>
+                                        <li><a href="{% url "hes:category" %}">music instr </a></li>
+                                        <li><a href="{% url "hes:category" %}">photo+video </a></li>
+                                        <li><a href="{% url "hes:category" %}">appliances </a></li>
+                                        <li><a href="{% url "hes:category" %}">Land </a></li>
+                                        <li><a href="{% url "hes:category" %}">arts+crafts </a></li>
+                                        <li><a href="{% url "hes:category" %}">auto parts </a></li>
                                     </ul>
 
                                 </div>
@@ -358,18 +358,18 @@
                             <div class="inner-box-content">
                                 <ul class="cat-list arrow"
                                     style="background: url({% static "hes/images/arrow-right.png" %}) no-repeat scroll left center rgba(0, 0, 0, 0);">
-                                    <li><a href="sub-category-sub-location.html"> Apparel (1,386) </a></li>
-                                    <li><a href="sub-category-sub-location.html"> Art (1,163) </a></li>
-                                    <li><a href="sub-category-sub-location.html"> Business Opportunities (4,974) </a>
+                                    <li><a href="{% url "hes:sub-category" %}"> Apparel (1,386) </a></li>
+                                    <li><a href="{% url "hes:sub-category" %}"> Art (1,163) </a></li>
+                                    <li><a href="{% url "hes:sub-category" %}"> Business Opportunities (4,974) </a>
                                     </li>
-                                    <li><a href="sub-category-sub-location.html"> Community and Events (1,258) </a></li>
-                                    <li><a href="sub-category-sub-location.html"> Electronics and Appliances
+                                    <li><a href="{% url "hes:sub-category" %}"> Community and Events (1,258) </a></li>
+                                    <li><a href="{% url "hes:sub-category" %}"> Electronics and Appliances
                                         (1,578) </a></li>
-                                    <li><a href="sub-category-sub-location.html"> Jobs and Employment (3,609) </a></li>
-                                    <li><a href="sub-category-sub-location.html"> Motorcycles (968) </a></li>
-                                    <li><a href="sub-category-sub-location.html"> Pets (1,188) </a></li>
-                                    <li><a href="sub-category-sub-location.html"> Services (7,583) </a></li>
-                                    <li><a href="sub-category-sub-location.html"> Vehicles (1,129) </a></li>
+                                    <li><a href="{% url "hes:sub-category" %}"> Jobs and Employment (3,609) </a></li>
+                                    <li><a href="{% url "hes:sub-category" %}"> Motorcycles (968) </a></li>
+                                    <li><a href="{% url "hes:sub-category" %}"> Pets (1,188) </a></li>
+                                    <li><a href="{% url "hes:sub-category" %}"> Services (7,583) </a></li>
+                                    <li><a href="{% url "hes:sub-category" %}"> Vehicles (1,129) </a></li>
                                 </ul>
                             </div>
                         </div>
@@ -464,10 +464,10 @@
         <div class="page-bottom-info-inner">
 
             <div class="page-bottom-info-content text-center">
-                <h1>If you have any questions, comments or concerns, please call the Classified Advertising department
-                    at (000) 555-5555</h1>
-                <a class="btn  btn-lg btn-primary-dark" href="tel:+000000000">
-                    <i class="icon-mobile"></i> <span class="hide-xs color50">Call Now:</span> (000) 555-5555 </a>
+                <h1>If you have any questions, comments or concerns, please call customer support
+                    at (937) 985-0867</h1>
+                <a class="btn  btn-lg btn-primary-dark" href="tel:+19379850867">
+                    <i class="icon-mobile"></i> <span class="hide-xs color50">Call Now:</span> (937) 985-0867 </a>
             </div>
 
         </div>

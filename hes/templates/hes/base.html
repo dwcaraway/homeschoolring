@@ -37,7 +37,7 @@
         <link rel="stylesheet" href="{% static "hes/css/owl.theme.css" %}">
 
         {# Mezzanine CMS styling, not sure what this is for exactly, maybe admin pages and CMS functionality #}
-        <link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
+        {#        <link rel="stylesheet" href="{% static "css/mezzanine.css" %}">#}
 
         {# not sure what this does, commenting out for the moment #}
         {#<link rel="stylesheet" href="{% static "hes/css/bootstrap-theme.css" %}">#}
@@ -72,54 +72,66 @@
 <div id="wrapper">
 
     {% block header_container %}
-    <div class="header">
-        <nav class="navbar   navbar-site navbar-default" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-                        <span class="sr-only">{% trans "Toggle Navigation" %}</span> <span class="icon-bar"></span> <span
-                            class="icon-bar"></span> <span class="icon-bar"></span></button>
-                    <a href="{% url "home" %}" class="navbar-brand logo logo-title">
-                        <!-- Original Logo will be placed here  -->
-                        <span class="logo-icon"><i class="icon icon-search-1 ln-shadow-logo shape-0"></i> </span>
-                        Home<span>Ed</span>Supply </a></div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        {% if request.user.is_authenticated %}
-                            <a href="{% url "account_logout" %}">{% trans "Logout" %}</a>
-                        {% else %}
-                        <a href="{% url "account_login" %}">{% trans "Login" %}</a>
-                        {% endif %}
-                    </li>
-                    </ul>
+        <div class="header">
+            <nav class="navbar   navbar-site navbar-default" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle"
+                                type="button">
+                            <span class="sr-only">{% trans "Toggle Navigation" %}</span> <span class="icon-bar"></span> <span
+                                class="icon-bar"></span> <span class="icon-bar"></span></button>
+                        <a href="{% url "home" %}" class="navbar-brand logo logo-title">
+                            <!-- Original Logo will be placed here  -->
+                        <img src="{% static "hes/images/logo.png" %}"/>
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            {% if request.user.is_authenticated %}
+                                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <span>{{ object.username }}</span> <i class="icon-user fa"></i> <i
+                                        class=" icon-down-open-big fa"></i></a>
+                                    <ul class="dropdown-menu user-menu">
+                                        <li class="active"><a href="{% url "hes:account-home" %}"><i class="icon-home"></i>
+                                            Personal Home </a></li>
+                                        <li><a href="{% url "account_logout" %}">Signout <i
+                                                class="glyphicon glyphicon-off"></i> </a></li>
+                                    </ul>
+                                </li>
+
+                            {% else %}
+                                <li><a href="{% url "account_login" %}">{% trans "Login" %}</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <!--/.nav-collapse -->
                 </div>
-                <!--/.nav-collapse -->
-            </div>
-            <!-- /.container-fluid -->
-        </nav>
-    </div>
-    <!-- /.header -->
+                <!-- /.container-fluid -->
+            </nav>
+        </div>
+        <!-- /.header -->
     {% endblock header_container %}
 
     {% block body_container %}
-    {%  endblock body_container %}
+    {% endblock body_container %}
 
     {% block footer_container %}
-    <div class="footer" id="footer">
-        <div class="container">
-            <ul class=" pull-left navbar-link footer-nav">
-                <li><a href="/"> Home </a> <a href="about-us.html"> About us </a> <a href="{% url "hes:coming-soon" %}"> Terms and
-                    Conditions </a> <a href="{% url "hes:coming-soon" %}"> Privacy Policy </a> <a href="{% url "hes:contact" %}"> Contact us </a> <a
-                        href="faq.html"> FAQ </a>
-            </ul>
-            <ul class=" pull-right navbar-link footer-nav">
-                <li> &copy; 2015 Home Education Supply, LLC</li>
-            </ul>
-        </div>
+        <div class="footer" id="footer">
+            <div class="container">
+                <ul class=" pull-left navbar-link footer-nav">
+                    <li><a href="/"> Home </a> <a href="{% url "hes:about-us" %}"> About us </a> <a
+                            href="{% url "hes:coming-soon" %}"> Terms and
+                        Conditions </a> <a href="{% url "hes:coming-soon" %}"> Privacy Policy </a> <a
+                            href="{% url "hes:contact" %}"> Contact us </a> <a
+                            href="{% url "hes:faq" %}"> FAQ </a>
+                </ul>
+                <ul class=" pull-right navbar-link footer-nav">
+                    <li> &copy; 2015 Home Education Supply, LLC</li>
+                </ul>
+            </div>
 
-    </div>
-    <!-- /.footer -->
+        </div>
+        <!-- /.footer -->
     {% endblock footer_container %}
 
 </div>
@@ -129,7 +141,7 @@
 {# Placed at the end of the document so the pages load faster #}
 {% compress js %}
     <!-- include checkRadio plugin //Custom check & Radio  -->
-    <script type="text/javascript" src="{%  static  "hes/js/icheck.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "hes/js/icheck.min.js" %}"></script>
 
     <script type="text/javascript" src="{% static "hes/bootstrap/js/bootstrap.min.js" %}"></script>
 
@@ -159,10 +171,10 @@
     <script type="text/javascript" src="{% static "hes/plugins/autocomplete/autocomplete-demo.js" %}"></script>
 
     <!-- include form-validation plugin || add this script where you need validation   -->
-    <script type="text/javascript" src="{% static "hes/js/form-validation.js"%}"></script>
+    <script type="text/javascript" src="{% static "hes/js/form-validation.js" %}"></script>
     <script src="{% static "hes/js/pace.min.js" %}"></script>
 
-    <script src="{% static  "hes/js/footable.js" %}" type="text/javascript"></script>
+    <script src="{% static "hes/js/footable.js" %}" type="text/javascript"></script>
     <script src="{% static "hes/js/footable.filter.js" %}" type="text/javascript"></script>
 
 
