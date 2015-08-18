@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
-{% load pages_tags mezzanine_tags i18n staticfiles %}
+{% load pages_tags mezzanine_tags i18n staticfiles account %}
 
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
@@ -88,7 +88,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             {% if request.user.is_authenticated %}
                                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <span>{{ user.username }}</span> <i class="icon-user fa"></i> <i
+                                    <span>Hello, {% user_display user %}</span> <i class="icon-user fa"></i> <i
                                         class=" icon-down-open-big fa"></i></a>
                                     <ul class="dropdown-menu user-menu">
                                         <li class="active"><a href="{% url "hes:account-home" %}"><i class="icon-home"></i>

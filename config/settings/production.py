@@ -103,7 +103,7 @@ INSTALLED_APPS = ('collectfast', ) + INSTALLED_APPS
 # EMAIL
 # ------------------------------------------------------------------------------
 DEFAULT_FROM_EMAIL = env('DJANGO_DEFAULT_FROM_EMAIL',
-                         default='hes <noreply@homeschoolring.com>')
+                         default='hes <noreply@homeedsupply.com>')
 EMAIL_HOST = env("DJANGO_EMAIL_HOST", default='smtp.sendgrid.com')
 EMAIL_HOST_PASSWORD = env("SENDGRID_PASSWORD")
 EMAIL_HOST_USER = env('SENDGRID_USERNAME')
