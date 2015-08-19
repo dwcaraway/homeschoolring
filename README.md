@@ -1,2 +1,2 @@
-# Homeschool Ring
-The Homeschool Ring Website. 
+# HomeEdSupply
+The Home Education Supply, LLC website. 

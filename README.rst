@@ -1,17 +1,14 @@
-hsr
+HomeEdSupply
 ==============================
 
-The Homeschool Ring main website for trading, buying and selling stuff.
-
-
-LICENSE: BSD
+The Home Education Supply, LLC main website for buying and selling education supplies.
 
 Settings
 ------------
 
-hsr relies extensively on environment settings which **will not work with Apache/mod_wsgi setups**. It has been deployed successfully with both Gunicorn/Nginx and even uWSGI/Nginx.
+HomeEdSupply relies extensively on environment settings which **will not work with Apache/mod_wsgi setups**. It has been deployed successfully with both Gunicorn/Nginx and even uWSGI/Nginx.
 
-For configuration purposes, the following table maps the 'hsr' environment variables to their Django setting:
+For configuration purposes, the following table maps the 'hes' environment variables to their Django setting:
 
 ======================================= =========================== ============================================== ======================================================================
 Environment Variable                    Django Setting              Development Default                            Production Default

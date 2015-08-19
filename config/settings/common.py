@@ -459,9 +459,8 @@ ALLOWED_HOSTS = ['www.homeedsupply.com']
 
 #
 # MEZZANINE CMS Settings
+# SEE http://mezzanine.jupo.org/docs/configuration.html
 #
-#
-
 
 #Allauth social integration settings
 SOCIALACCOUNT_QUERY_EMAIL = True
